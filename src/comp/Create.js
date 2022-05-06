@@ -15,7 +15,7 @@ function Create() {
     useEffect(() => {
         setData([])
     }, [])
-
+    
     let info = [
         {
             part: "",
@@ -188,39 +188,41 @@ function Create() {
     }
 
   return (
-    <section className=" flex flex-col justify-around">
-        <div>
-            <div>
-                <h1>which category</h1>
+    <section className="flex flex-col justify-around w-full h-[100vh]">
+        <div className="border-[2px] border-black w-[80%] m-auto p-4 pb-1 rounded-[6px]">
+            <div className="flex mt-2 mb-2">
+                <h1 className="mr-6 text-[20px]">Which category are you editing? </h1>
                 <select name="category" id="category" ref={cat} onChange={change}>
-                    <option value="0">cat 1</option>
-                    <option value="1">cat 2</option>
-                    <option value="2">cat 3</option>
-                    <option value="3">cat 4</option>
-                    <option value="4">cat 5</option>
+                    <option value="0">Category 1</option>
+                    <option value="1">Category 2</option>
+                    <option value="2">Category 3</option>
+                    <option value="3">Category 4</option>
+                    <option value="4">Category 5</option>
                 </select>
             </div>
             <div>
-                <h1>name for cat</h1>
-                <input type="text" name="part" id="part" onInput={input} placeholder="name" ref={name}/>
+                <h1 className="text-[18px]">Name/subject of this category</h1>
+                <input type="text" name="part" id="part" onInput={input} placeholder="name" ref={name} className="border-b-[1px] border-black"/>
             </div>
-            <div>
-                <h1>which question</h1>
+            <div className="flex mt-2 mb-2 flex-wrap gap-2">
+                <div className="flex mr-4">
+                <h1 className="mr-6 text-[18px]">Which question are you editing? </h1>
                 <select name="question" id="questionSelector" ref={questionSelector} onChange={change}>
-                    <option value="one">q 1</option>
-                    <option value="two">q 2</option>
-                    <option value="three">q 3</option>
-                    <option value="four">q 4</option>
-                    <option value="five">q 5</option>
+                    <option value="one">Question 1</option>
+                    <option value="two">Question 2</option>
+                  <option value="three">Question 3</option>
+                   <option value="four">Question 4</option>
+                   <option value="five">Question 5</option>
                 </select>
+                </div>
+                <div className="">
+                <input type="text" name="question" id="question" placeholder="Question" onInput={input} ref={question} className="mr-2 border-b-[1px] border-black"/>
+                <input type="number" name="value" id="value" placeholder="Value" onInput={input} ref={value} className="mr-2 border-b-[1px] border-black"/>
+                <input type="text" name="answer" id="answer" placeholder="Answer" onInput={input} ref={answer} className=" border-b-[1px] border-black"/>
+                </div>
             </div>
-            <div>
-                <input type="text" name="question" id="question" placeholder="Question" onInput={input} ref={question}/>
-                <input type="number" name="value" id="value" placeholder="Value" onInput={input} ref={value}/>
-                <input type="text" name="answer" id="answer" placeholder="Answer" onInput={input} ref={answer}/>
-            </div>
+        <button className='w-full pt-[5px] pb-[5px] text-[18px] border-[2px] border-black m-auto mt-4 mb-2 rounded-[6px]' onClick={handle}>Create</button>
         </div>
-        <button className='w-[90%] pt-[5px] pb-[5px] text-[18px] border-[2px] border-black m-auto mt-4 mb-4' onClick={handle}>Create</button>
     </section>
   )
 }
