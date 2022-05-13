@@ -1,7 +1,7 @@
 import Cat from "./Cat"
 import Team from "./Team"
 
-import {useState, useContext, useEffect} from 'react'
+import {useContext} from 'react'
 import {Link} from "react-router-dom"
 import { dataContext } from '../helper/dataContext'
 import { teamContext } from '../helper/teamContext'
@@ -34,8 +34,9 @@ function Play() {
   return (
     <section>
       <div className="w-full h-[50vh] overflow-x-scroll">
-          {/* <h1 className="text-center font-semibold text-[24px] mt-2 mb-2">Choose a question:</h1> */}
-          <div className="h-full flex flex-col justify-around items-center">
+          {/* <h1 className="text-center font-semibold text-[24px] mt-2 mb-2">Choose a question:</h1>
+          https://readmanganato.com/manga-ek981919/chapter-156 */}
+          <div className="h-full flex flex-col justify-between items-center">
             {data.map(obj => {
               let key = genID()
               return (
