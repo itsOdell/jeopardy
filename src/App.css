@@ -1,7 +1,7 @@
 .leaderboard {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-    grid-gap: 50px;
+    grid-template-columns: repeat(4, minmax(20%, 1fr));
+    grid-gap: 40px;
 }
 .team {
     border: 1px solid black;

@@ -55,8 +55,8 @@ function Play() {
                   <Team key={obj.id} {...obj} />
                 )
               })}
-              <div className="flex justify-center items-center text-[20px] border-[2px] border-black cursor-pointer underline" onClick={addTeam}>
-                Add Team
+              <div className="flex justify-center items-center text-[30px] h-[130px] cursor-pointer" onClick={addTeam}>
+                <p className="w-[70px] h-[70px] border-[2px] flex justify-center items-center">+</p>
               </div>
             </div>
             </div>

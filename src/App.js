@@ -27,10 +27,10 @@ function App() {
     answer: ""
   })
   let [team, setTeam] = useState([
-  {name: "team a", score: 0, id: genID()},
-  {name: "team b", score: 0, id: genID()},
-  {name: "team c", score: 0, id: genID()},
-  {name: "team d", score: 0, id: genID()}
+  // {name: "team a", score: 0, id: genID()},
+  // {name: "team b", score: 0, id: genID()},
+  // {name: "team c", score: 0, id: genID()},
+  // {name: "team d", score: 0, id: genID()}
   ])
 
   return (

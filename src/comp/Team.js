@@ -15,7 +15,7 @@ function Team({name, id, score}) {
   }
 
   return (
-    <div className="team" id={id}>
+    <div className="team h-[130px]" id={id}>
       <div className="flex justify-between flex-wrap">
         <p className="text-[20px] font-medium">{name}</p>
         <p className="text-[20px] font-medium">{score}</p>
