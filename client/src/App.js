@@ -13,12 +13,12 @@ import { useState } from 'react';
 
 function App() {
   
-  function genID() {
-    let chars = "abcdefghijklmnopqrstuvwxyz";
-    let special = "[]!@#$%&'()*+,-./:;<=>?@>";
-    let id = (Math.random() * 1000) + special[Math.floor(Math.random() * special.length)] + chars[Math.floor(Math.random() * chars.length)]
-    return id;
-  }
+  // function genID() {
+  //   let chars = "abcdefghijklmnopqrstuvwxyz";
+  //   let special = "[]!@#$%&'()*+,-./:;<=>?@>";
+  //   let id = (Math.random() * 1000) + special[Math.floor(Math.random() * special.length)] + chars[Math.floor(Math.random() * chars.length)]
+  //   return id;
+  // }
 
   let [data, setData] = useState([])
   let [modal, setModal] = useState({
@@ -27,10 +27,6 @@ function App() {
     answer: ""
   })
   let [team, setTeam] = useState([
-  // {name: "team a", score: 0, id: genID()},
-  // {name: "team b", score: 0, id: genID()},
-  // {name: "team c", score: 0, id: genID()},
-  // {name: "team d", score: 0, id: genID()}
   ])
 
   return (

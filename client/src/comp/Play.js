@@ -56,7 +56,7 @@ function Play() {
                 )
               })}
               <div className="flex justify-center items-center text-[30px] h-[130px] cursor-pointer" onClick={addTeam}>
-                <p className="w-[70px] h-[70px] border-[2px] flex justify-center items-center">+</p>
+                <p className="w-[70px] h-[70px] border-[2px] flex justify-center items-center rounded-md">+</p>
               </div>
             </div>
             </div>

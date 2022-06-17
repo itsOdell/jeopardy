@@ -15,14 +15,14 @@ function Team({name, id, score}) {
   }
 
   return (
-    <div className="team h-[130px]" id={id}>
+    <div className="team h-[130px] rounded-md" id={id}>
       <div className="flex justify-between flex-wrap">
         <p className="text-[20px] font-medium">{name}</p>
         <p className="text-[20px] font-medium">{score}</p>
       </div>
       <div className="flex justify-around w-full flex-wrap">
         <input type="number" className='border-[1px] border-[#00000047] w-[90%] mt-[8px]' ref={input}/>
-        <button className="pr-[8px] pl-[8px] border-[2px] text-[18px] mt-[8px]" onClick={handle}>Submit</button>
+        <button className="pr-[8px] pl-[8px] border-[2px] text-[18px] mt-[8px] rounded-md" onClick={handle}>Submit</button>
       </div>
     </div>
   )
