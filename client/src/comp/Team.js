@@ -10,7 +10,7 @@ function Team({name, id, score}) {
       return team.id === id ?
       {...team, score: finalAdd} :
       team
-    }).sort((a,b) => b.score - a.score));
+    }));
     input.current.value = "";
   }
 
