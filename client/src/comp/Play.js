@@ -34,8 +34,6 @@ function Play() {
   return (
     <section>
       <div className="w-full h-[50vh] overflow-x-scroll">
-          {/* <h1 className="text-center font-semibold text-[24px] mt-2 mb-2">Choose a question:</h1>
-          https://readmanganato.com/manga-ek981919/chapter-156 */}
           <div className="h-full flex flex-col justify-between items-center">
             {data.map(obj => {
               let key = genID()
