@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const {PORT, MONGODB_URI} = process.env;
 const indexRouter = require('./routes/index');
 const protectedRouter = require('./routes/protected');
+const {authenticate} = require("./middleware/authenticate")
 
 async function connectDB(): Promise<void> {
     try {
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors({origin: "*"}));
 app.use("/", indexRouter);
+app.use('/auth', authenticate);
 app.use('/auth', protectedRouter);
 
 app.listen(PORT, (): void => {

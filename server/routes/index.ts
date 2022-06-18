@@ -4,7 +4,8 @@ import { HydratedDocument } from "mongoose";
 const router = require("express").Router();
 const bcrypt = require('bcryptjs');
 const User = require("../db/models/Users");
-const SALT: number = Number(process.env.SALT);
+const jwt = require("jsonwebtoken");
+const SALT: number = Number(process.env.SALT), JWT_SECRET: string = String(process.env.JWT_SECRET);
 
 router.post('/register', async (req: Request, res: Response) => {
     try {
@@ -21,25 +22,33 @@ router.post('/register', async (req: Request, res: Response) => {
         });
         await user.save();
         res.send(200).json();
-    } catch (error: any) {
-        res.status(400).json({error: error.message});
+    } catch (error) {
+        res.status(400).json({error: (error as Error).message});
     }
 });
 
 router.post("/login", async (req: Request, res: Response) => {
     try {
         let {email, password} = req.body;
+        //user exists
         const exists = await User.findOne({email: email});
         if (exists === null) {
-            return res.status(400).json({error: "User does not exist"})
+            // return res.status(400).json({error: "User does not exist"})
+            throw {message: "User does not exist"};
         }
-        // console.log(exists)
+
+        //if exists then check password;
         const passwordMatches = await bcrypt.compare(password, exists.password);
         if (!passwordMatches) {
-            return res.status(400).json({error: "Incorrect password"});
+            // return res.status(400).json({error: "Incorrect password"});
+            throw {message: "Incorrect password"};
         }
-    } catch (error: any) {
-        console.log(error.message)
+
+        //if password matches, then send token
+        const token = jwt.sign({username: exists.username}, JWT_SECRET)
+        res.status(200).json({token: token})
+    } catch (error) {
+        return res.status(400).json({error: (error as Error).message})
     }
 });
 

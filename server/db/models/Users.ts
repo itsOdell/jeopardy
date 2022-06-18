@@ -30,34 +30,156 @@ const userSchema = new Schema({
             message: "Password must contain: at lease 1 lowercase, at least 1 uppercase and least 1 number"
         }
     },
-    projects: [{
-        part: String,
-        one: {
-            question: String,
-            value: Number,
-            answer: String
-        },
-        two: {
-            question: String,
-            value: Number,
-            answer: String
-        },
-        three: {
-            question: String,
-            value: Number,
-            answer: String
-        },
-        four: {
-            question: String,
-            value: Number,
-            answer: String
-        },     
-        five: {
-            question: String,
-            value: Number,
-            answer: String
-        }
-    }]
+    projects: [
+        {
+            "projectName": {
+              "type": String,
+              "required": true
+            },
+            "projectData": [
+              {
+                "part": String,
+                "one": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "two": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "three": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "four": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "five": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                }
+              },
+              {
+                "part": String,
+                "one": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "two": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "three": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "four": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "five": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                }
+              },
+              {
+                "part": String,
+                "one": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "two": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "three": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "four": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "five": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                }
+              },
+              {
+                "part": String,
+                "one": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "two": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "three": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "four": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "five": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                }
+              },
+              {
+                "part": String,
+                "one": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "two": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "three": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "four": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                },
+                "five": {
+                  "question": String,
+                  "value": Number,
+                  "answer": String
+                }
+              }
+            ]
+          }
+    ]
 }, {timestamps: true})
 userSchema.plugin(uniqueValidator)
 
