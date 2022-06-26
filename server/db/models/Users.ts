@@ -1,5 +1,8 @@
+require("dotenv").config()
+const bcrypt = require('bcryptjs')
 const {Schema, model} = require('mongoose');
 const uniqueValidator = require("mongoose-unique-validator")
+const SALT: number = Number(process.env.SALT);
 
 const userSchema = new Schema({
     username: {
@@ -30,11 +33,19 @@ const userSchema = new Schema({
             message: "Password must contain: at lease 1 lowercase, at least 1 uppercase and least 1 number"
         }
     },
+    tier: {
+      type: String,
+      default: "free"
+    },
+    profilePicture: {
+      type: String,
+      default: null
+    },
     projects: [
         {
             "projectName": {
-              "type": String,
-              "required": true
+              type: String,
+              unique: [true, "project name is already taken"]
             },
             "projectData": [
               {
@@ -63,7 +74,8 @@ const userSchema = new Schema({
                   "question": String,
                   "value": Number,
                   "answer": String
-                }
+                },
+                _id: false
               },
               {
                 "part": String,
@@ -91,7 +103,8 @@ const userSchema = new Schema({
                   "question": String,
                   "value": Number,
                   "answer": String
-                }
+                },
+                _id: false
               },
               {
                 "part": String,
@@ -119,7 +132,8 @@ const userSchema = new Schema({
                   "question": String,
                   "value": Number,
                   "answer": String
-                }
+                },
+                _id: false
               },
               {
                 "part": String,
@@ -147,7 +161,8 @@ const userSchema = new Schema({
                   "question": String,
                   "value": Number,
                   "answer": String
-                }
+                },
+                _id: false
               },
               {
                 "part": String,
@@ -175,13 +190,183 @@ const userSchema = new Schema({
                   "question": String,
                   "value": Number,
                   "answer": String
-                }
+                },
+                _id: false
               }
             ]
           }
-    ]
+    ],
+    privateProjects: [
+      {
+          "projectName": {
+            type: String,
+            unique: [true, "project name is already taken"]
+          },
+          "projectData": [
+            {
+              "part": String,
+              "one": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "two": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "three": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "four": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "five": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              _id: false
+            },
+            {
+              "part": String,
+              "one": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "two": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "three": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "four": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "five": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              _id: false
+            },
+            {
+              "part": String,
+              "one": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "two": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "three": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "four": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "five": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              _id: false
+            },
+            {
+              "part": String,
+              "one": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "two": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "three": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "four": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "five": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              _id: false
+            },
+            {
+              "part": String,
+              "one": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "two": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "three": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "four": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              "five": {
+                "question": String,
+                "value": Number,
+                "answer": String
+              },
+              _id: false
+            }
+          ]
+        }
+  ]
 }, {timestamps: true})
+
 userSchema.plugin(uniqueValidator)
+
+userSchema.pre('save', async function(next: any) {
+  try {
+    const user = this;
+    if (!user.isModified('password')) return next();
+    let hashedPassword = await bcrypt.hash(user.password, SALT);
+    user.password = hashedPassword;
+    return next()
+  } catch (error) {
+    console.log((error as Error).message)
+  }
+
+})
 
 const User = model('Users', userSchema);
 module.exports = User;

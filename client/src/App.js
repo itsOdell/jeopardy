@@ -2,7 +2,6 @@ import Navbar from './comp/Navbar';
 import Main from './comp/Main';
 import Play from './comp/Play';
 import Create from './comp/Create';
-import bgImg from "./img/Waimakariri.png"
 import './App.css';
 
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
