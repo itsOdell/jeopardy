@@ -13,18 +13,18 @@ function Navbar() {
       <ul className="links flex items-center">
         <li>
           <div>
-            <input type="text" name="searchBar" id="searchBar" className="w-[260px] bg-[#FFFFFF] rounded-tl-[10px] rounded-bl-[10px] pt-[7.5px] pb-[7.5px] pl-[9px] outline-none"></input>
-            <button id="searchBtn" className='h-[40px] rounded-tr-[10px] rounded-br-[10px] bg-[#795DDD] pl-[10px] pr-[10px] text-[#FFFFFF] font-semibold'>Search</button>
+            <input type="text" name="searchBar" id="searchBar" className="w-[260px] bg-[#FFFFFF] rounded-tl-[10px] rounded-bl-[10px] pl-[9px] pt-[5px] pb-[5px] outline-none text-[15px]" />
+            <button id="searchBtn" className="bg-[#795DDD] pt-[5px] pb-[5px] text-[15px] text-[#FFFFFF] pr-[9px] pl-[4px] rounded-tr-[10px] rounded-br-[10px]">Search</button>
           </div>
         </li>
         <li>
-          <Link to="/dashboard/tiers" className='ml-[45px] text-[20px] font-semibold text-[#ffffff]'>Plans</Link>
+          <Link to="/dashboard/tiers" className='ml-[45px] font-semibold text-[18px] text-[#ffffff]'>Plans</Link>
         </li>
         <li>
-          <Theme className="cursor-pointer ml-[45px]"/>
+          <Theme className="cursor-pointer ml-[45px] h-[35px] w-[35px]"/>
         </li>
         <li>
-          <User className="cursor-pointer ml-[45px]"/>
+          <User className="cursor-pointer ml-[45px] h-[35px] w-[35px]"/>
         </li>
       </ul>
     </nav>
