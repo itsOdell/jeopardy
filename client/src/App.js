@@ -11,13 +11,6 @@ import {modalContext} from "./helper/modalContext"
 import { useState } from 'react';
 
 function App() {
-  
-  // function genID() {
-  //   let chars = "abcdefghijklmnopqrstuvwxyz";
-  //   let special = "[]!@#$%&'()*+,-./:;<=>?@>";
-  //   let id = (Math.random() * 1000) + special[Math.floor(Math.random() * special.length)] + chars[Math.floor(Math.random() * chars.length)]
-  //   return id;
-  // }
 
   let [data, setData] = useState([])
   let [modal, setModal] = useState({
@@ -28,6 +21,8 @@ function App() {
   let [team, setTeam] = useState([
   ])
 
+  let test = "test"
+
   return (
     <Router>
       <dataContext.Provider value={{data, setData}}>
@@ -37,10 +32,8 @@ function App() {
             <Switch>
 
               <Route exact path="/"> 
-              {/* <div style={{backgroundImage: `url(${bgImg})`, backgroundRepeat: "no-repeat", height: "100vh", backgroundSize: "cover"}}> */}
                 <Navbar />
                 <Main />
-              {/* </div> */}
               </Route>
 
               <Route exact path="/create">

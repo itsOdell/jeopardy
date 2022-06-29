@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs')
 const {Schema, model} = require('mongoose');
 const uniqueValidator = require("mongoose-unique-validator")
 const SALT: number = Number(process.env.SALT);
+const {Project} = require("../../validator/validateProject");
+
 
 const userSchema = new Schema({
     username: {

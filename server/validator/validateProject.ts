@@ -40,7 +40,15 @@ export interface Project {
     "projectName": string,
     "projectData": [Column, Column, Column, Column, Column]
 }
-
+// export interface userInterface {
+//     username: string,
+//     email: string,
+//     password: string,
+//     tier: string,
+//     profilePicture?: string,
+//     projects: Project[],
+//     privateProjects: Project[]
+// }
 
 export function validateProject(project): boolean {
     if (project.projectName !== undefined && project.projectName !== "" && project.hasOwnProperty("projectName") && project.projectName !== null && project.hasOwnProperty("projectData") && project.projectData !== undefined && project.projectData !== "" && project.projectData !== null) return true;
