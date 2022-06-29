@@ -1,6 +1,6 @@
 // import React from 'react'
 import {Link} from "react-router-dom"
-import {ReactComponent as Jeopardy} from "../img/jeopardy.svg"
+// import {ReactComponent as Jeopardy} from "../img/jeopardy.svg"
 
 function Main() {
   return (
@@ -12,11 +12,12 @@ function Main() {
                 <p className="text-[18px] font-semibold mb-5">
                 With our amazing website, you can create flawless, performant, Stylish and fun Jeopardy games while also learning and having fun at the same time!
                 </p>
-                <Link to="/create" className="w-full m-auto pt-[6px] pb-[6px] font-semibold rounded-xl mb-[10px] bg-[#6b63ffc6] text-white text-center transition-all _shadow">Create a jeopardy game</Link>
+                {/* <Link to="/create" className="w-full m-auto pt-[6px] pb-[6px] font-semibold rounded-xl mb-[10px] bg-[#6b63ffc6] text-white text-center transition-all _shadow">Create a jeopardy game</Link> */}
+                <button onClick={() => localStorage.setItem("token", 'test')}>test</button>
             </div>
 
             <div className="">
-                <Jeopardy style={{maxWidth: "716px", maxHeight: "341px", width: "655px", paddingLeft: "7px", paddingRight:  "25px", paddingBottom: "30px"}} />
+                {/* <Jeopardy style={{maxWidth: "716px", maxHeight: "341px", width: "655px", paddingLeft: "7px", paddingRight:  "25px", paddingBottom: "30px"}} /> */}
             </div>
         </div>
     </main>
