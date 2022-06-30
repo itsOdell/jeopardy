@@ -33,4 +33,12 @@ router.get("/:projectType/:projectId", async (req: Request, res: Response) => {
     }
 });
 
+router.get("/authenticate", async (req: Request, res: Response) => {
+    try {
+        return res.status(200).json({token: req.headers.bearer})
+    } catch (error) {
+        return res.status(400).json({error: (error as Error).message})
+    }
+})
+
 module.exports = router;
