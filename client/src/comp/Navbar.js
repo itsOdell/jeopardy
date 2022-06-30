@@ -8,7 +8,7 @@ function Navbar() {
       <div className="w-[85%] flex justify-between items-center m-auto flex-wrap">
 
         <div className="flex items-center cursor-pointer">
-          <Logo />
+          <Logo className="w-[50px] h-[50px]"/>
           <p className="ml-2 font-semibold text-[18px]">Jeopardy</p>
         </div>
 
