@@ -4,17 +4,18 @@ import {ReactComponent as Logo} from "../img/Logo-black.svg"
 import {ReactComponent as Theme} from "../img/Theme.svg"
 
 function Navbar() {
+  //needs work on animation, search bar, profile, theme functionality, responsive design
   return (
-    <nav className="w-[80%] m-auto flex justify-between items-center">
-      <div className="logo">
+    <nav className="w-[80%] m-auto flex justify-between items-center mt-[8px]">
+      <div className="logo cursor-pointer">
           <Logo />
       </div>
 
       <ul className="links flex items-center">
-        <li>
-          <div>
-            <input type="text" name="searchBar" id="searchBar" className="w-[260px] bg-[#FFFFFF] rounded-tl-[10px] rounded-bl-[10px] pl-[9px] pt-[5px] pb-[5px] outline-none text-[15px]" />
-            <button id="searchBtn" className="bg-[#795DDD] pt-[5px] pb-[5px] text-[15px] text-[#FFFFFF] pr-[9px] pl-[4px] rounded-tr-[10px] rounded-br-[10px]">Search</button>
+        <li className='group'>
+          <div className="flex">
+            <input type="text" name="searchBar" id="searchBar" className="w-[260px] bg-[#FFFFFF] rounded-tl-[6px] rounded-bl-[6px] pl-[12px] pt-[5px] pb-[5px] outline-none text-[14px] transition-all transition-duration-[300ms]" placeholder="Search Users..." />
+            <button id="searchBtn" className="bg-[#795DDD] pt-[5px] pb-[5px] text-[14px] text-[#FFFFFF] pr-[12px] pl-[12px] rounded-tr-[6px] rounded-br-[6px] transition-all transition-duration-[300ms] font-semibold">Search</button>
           </div>
         </li>
         <li>

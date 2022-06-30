@@ -1,3 +1,6 @@
+body{
+    background: #141414;
+}
 .leaderboard {
     display: grid;
     grid-template-columns: repeat(4, minmax(20%, 1fr));

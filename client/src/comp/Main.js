@@ -1,25 +1,23 @@
-// import React from 'react'
 import {Link} from "react-router-dom"
-// import {ReactComponent as Jeopardy} from "../img/jeopardy.svg"
+import {ReactComponent as Hero} from "../img/Hero.svg";
+import {ReactComponent as Blob} from "../img/Blob.svg";
 
 function Main() {
   return (
-    <main className="h-[90vh] flex items-center overflow-hidden text-[20px] ">
-        <div className="w-[95%] flex justify-around items-center m-auto flex-wrap overflow-hidden">
+    <main className="w-[80%] mt-[5px] flex justify-center items-center m-auto xl:justify-between">
+      <div className="w-[550px] mt-[60px]">
+        <h1 className="text-[#FFFFFF] text-[50px] font-bold tracking-[3%] leading-[1.3] mb-[50px]">Play, edit and make
+        jeopardies easily</h1>
+        <p className="text-[20px] text-[#D7D7D7] tracking-[3%] font-medium leading-7 mb-[50px]">Effortlesly create and play jeopardy quizzes made by other players, or make your own 
+        jeopardy and make it public for the world to see. Play by yourself or with friends, all for free.</p>
+        <Link to="/dashboard/create" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center mb-[20px] pt-[15px] pb-[15px]">Create a jeopardy</Link>
+        <Link to="/dashboard/register" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center pt-[15px] pb-[15px]">Signup</Link>
+      </div>
 
-            <div className="flex flex-col items-start justify-between w-[450px] p-4 rounded-xl break-words">
-                <h1 className="text-[44px] font-semibold tracking-[1px] mt-[10px] mb-3 leading-[1.3]">Create a fun free game of Jeopardy</h1>
-                <p className="text-[18px] font-semibold mb-5">
-                With our amazing website, you can create flawless, performant, Stylish and fun Jeopardy games while also learning and having fun at the same time!
-                </p>
-                {/* <Link to="/create" className="w-full m-auto pt-[6px] pb-[6px] font-semibold rounded-xl mb-[10px] bg-[#6b63ffc6] text-white text-center transition-all _shadow">Create a jeopardy game</Link> */}
-                <button onClick={() => localStorage.setItem("token", 'test')}>test</button>
-            </div>
-
-            <div className="">
-                {/* <Jeopardy style={{maxWidth: "716px", maxHeight: "341px", width: "655px", paddingLeft: "7px", paddingRight:  "25px", paddingBottom: "30px"}} /> */}
-            </div>
-        </div>
+      <div className="hidden mt-[60px] xl:block relative pl-[10px]">
+        <Blob className="absolute z-[-1] top-[-50px] left-[-75px]"/>
+        <Hero />
+      </div>
     </main>
   )
 }

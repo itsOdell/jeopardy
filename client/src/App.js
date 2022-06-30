@@ -18,12 +18,13 @@ function App() {
         let res = await axios.get("http://localhost:3001/auth/", {headers: {bearer: localStorage.getItem("token")}});
         localStorage.setItem("token", res.data.token)
       } catch (error) {
-        console.error(error.response.data)
+        console.error(error.response)
       }
     }
     authorizeToken()
   }, [])
 
+  let [theme, setTheme] = useState("dark");
   let [data, setData] = useState([])
   let [modal, setModal] = useState({show: false,question: "",answer: ""})
   let [team, setTeam] = useState([])
@@ -34,12 +35,12 @@ function App() {
       <dataContext.Provider value={{data, setData}}>
         <teamContext.Provider value={{team, setTeam}}>
           <modalContext.Provider value={{modal, setModal}}>
-          <div className="App bg-[#141414]">
+          <div className="App">
             <Switch>
 
               <Route exact path="/"> 
                 <Navbar />
-                {/* <Main /> */}
+                <Main />
               </Route>
 
               {/*show login/register tab in sidenav if token not authorized, 
