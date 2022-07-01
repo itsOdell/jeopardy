@@ -13,6 +13,11 @@ import { useState, useEffect } from 'react';
 
 function App() {
   useEffect(() => {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
     async function authorizeToken() {
       try {
         let res = await axios.get("http://localhost:3001/auth/", {headers: {bearer: localStorage.getItem("token")}});
@@ -23,8 +28,7 @@ function App() {
     }
     authorizeToken()
   }, [])
-
-  let [theme, setTheme] = useState("dark");
+  
   let [data, setData] = useState([])
   let [modal, setModal] = useState({show: false,question: "",answer: ""})
   let [team, setTeam] = useState([])

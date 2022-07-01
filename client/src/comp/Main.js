@@ -6,12 +6,12 @@ function Main() {
   return (
     <main className="w-[80%] mt-[5px] flex justify-center items-center m-auto xl:justify-between">
       <div className="w-[550px] mt-[60px]">
-        <h1 className="text-[#FFFFFF] text-[50px] font-bold tracking-[3%] leading-[1.3] mb-[50px]">Play, edit and make
+        <h1 className="dark:text-[#FFFFFF] text-[50px] font-bold tracking-[3%] leading-[1.3] mb-[50px]">Play, edit and make
         jeopardies easily</h1>
-        <p className="text-[20px] text-[#D7D7D7] tracking-[3%] font-medium leading-7 mb-[50px]">Effortlesly create and play jeopardy quizzes made by other players, or make your own 
+        <p className="text-[20px] dark:text-[#D7D7D7] tracking-[3%] font-medium leading-7 mb-[50px]">Effortlesly create and play jeopardy quizzes made by other players, or make your own 
         jeopardy and make it public for the world to see. Play by yourself or with friends, all for free.</p>
-        <Link to="/dashboard/create" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center mb-[20px] pt-[15px] pb-[15px]">Create a jeopardy</Link>
-        <Link to="/dashboard/register" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center pt-[15px] pb-[15px]">Signup</Link>
+        <Link to="/dashboard/create" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center mb-[20px] pt-[15px] pb-[15px] transition-all transition-duration-[300ms] hover:bg-[#6B15EC] hover:shadow-xl">Create a jeopardy</Link>
+        <Link to="/dashboard/register" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center pt-[15px] pb-[15px] transition-all transition-duration-[300ms] hover:bg-[#6B15EC] hover:shadow-xl">Signup</Link>
       </div>
 
       <div className="hidden mt-[60px] xl:block relative pl-[10px]">
