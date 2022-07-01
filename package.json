@@ -21,7 +21,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "start": "npx ts-node server/server.js",
+    "start": "nodemon build/server.js",
     "dev": "nodemon server/server.ts"
   },
   "repository": {
