@@ -1,1 +1,1 @@
-web: node build/server.js
+web: npx ts-node server/server.ts
