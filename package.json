@@ -21,7 +21,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "start": "nodemon build/server.js",
+    "start:local": "nodemon build/server.js",
     "dev": "nodemon server/server.ts"
   },
   "repository": {
