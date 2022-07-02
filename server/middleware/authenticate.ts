@@ -10,6 +10,6 @@ export async function authenticate(req: Request, res: Response, next: NextFuncti
         req.token = token;
         next()
     } catch (error) {
-        return res.status(400).json({error: (error as Error).message});
+        return res.status(401).json({error: (error as Error).message});
     } 
 }
