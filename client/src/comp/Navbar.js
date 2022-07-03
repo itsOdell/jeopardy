@@ -5,7 +5,6 @@ import {ReactComponent as Logo} from "../img/Logo-black.svg";
 import {ReactComponent as Theme} from "../img/Theme.svg"
 
 function Navbar() {
-  //needs work on animation, search bar and profile functionality, responsive design
   function changeTheme() {
     document.body.classList.toggle("dark");
   }
@@ -27,7 +26,7 @@ function Navbar() {
           <Link to="/dashboard/tiers" className='ml-[45px] font-semibold text-[18px] dark:text-[#ffffff]'>Plans</Link>
         </li>
         <li>
-          <Theme className="cursor-pointer ml-[45px] h-[35px] w-[35px] hover:fill-blue-500" onClick={changeTheme}/>
+          <Theme className="cursor-pointer ml-[45px] h-[35px] w-[35px]" onClick={changeTheme}/>
         </li>
         <li>
           <User className="cursor-pointer ml-[45px] h-[35px] w-[35px]"/>
