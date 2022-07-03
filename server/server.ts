@@ -3,6 +3,7 @@ import { Express } from "express";
 const express = require("express");
 const app: Express = express();
 const cors = require('cors');
+const path = require('path');
 
 //local files
 const {PORT} = process.env;
@@ -24,6 +25,13 @@ app.use('/auth', protectedRouter);
 app.use("/projectSetting", authenticate);
 app.use("/projectSetting", projectSetting);
 app.use("/view", viewUsers);
+
+if (process.env.NODE_ENV == 'production') {
+    app.use(express.static('client/build'));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    })
+}
 
 app.listen(PORT, (): void => {
     console.log(`listening on port ${PORT}`);

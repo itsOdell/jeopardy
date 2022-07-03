@@ -22,8 +22,9 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "start": "nodemon build/server.js",
-    "dev": "nodemon server/server.ts"
+    "start": "node build/server.js",
+    "dev": "nodemon server/server.ts",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
