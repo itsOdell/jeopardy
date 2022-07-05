@@ -2,6 +2,7 @@ import axios from "axios"
 import Navbar from './comp/Navbar';
 import Main from './comp/Main';
 import Play from './comp/Play';
+import Social from './comp/Social';
 import Create from './comp/Create';
 import './App.css';
 
@@ -45,6 +46,7 @@ function App() {
               <Route exact path="/"> 
                 <Navbar />
                 <Main />
+                <Social />
               </Route>
 
               {/*show login/register tab in sidenav if token not authorized, 
