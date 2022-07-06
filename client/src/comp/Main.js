@@ -11,7 +11,7 @@ function Main() {
         <p className="text-[20px] dark:text-[#D7D7D7] tracking-[3%] font-medium leading-7 mb-[50px]">Effortlesly create and play jeopardy quizzes made by other players, or make your own 
         jeopardy and make it public for the world to see. Play by yourself or with friends, all for free.</p>
         <Link to="/dashboard/create" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center mb-[20px] pt-[15px] pb-[15px] transition-all transition-duration-[300ms] hover:bg-[#6B15EC] hover:shadow-xl">Create a jeopardy</Link>
-        <Link to="/dashboard/register" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center pt-[15px] pb-[15px] transition-all transition-duration-[300ms] hover:bg-[#6B15EC] hover:shadow-xl">Signup</Link>
+        <Link to="/dashboard/join" className="w-full bg-[#795DDD] text-[#FFFFFF] rounded-[6px] block font-semibold text-[20px] text-center pt-[15px] pb-[15px] transition-all transition-duration-[300ms] hover:bg-[#6B15EC] hover:shadow-xl">Search a Jeopardy</Link>
       </div>
 
       <div className="hidden mt-[60px] xl:block relative pl-[10px]">

@@ -1,14 +1,23 @@
-import {useState, memo} from "react"
+import {useState, useRef} from "react"
 import {Link} from 'react-router-dom'
 import {ReactComponent as User} from "../img/User.svg"
 import {ReactComponent as Logo} from "../img/Logo-black.svg";
 import {ReactComponent as Theme} from "../img/Theme.svg"
+import {domain} from "../App"
 
 function Navbar() {
+  let themeBtn = useRef();
 
   function changeTheme() {
     document.body.classList.toggle("dark");
+    if (document.body.classList.contains("dark")) {
+      themeBtn.current.classList.add("fa-sun");
+      themeBtn.current.classList.remove("ml-[2px]", "mt-[2px]");
+    } else {
+      themeBtn.current.classList.remove("fa-sun")
+    }
   }
+
 
   return (
     <nav className="w-[80%] m-auto flex justify-between items-center mt-[8px]">
@@ -29,12 +38,12 @@ function Navbar() {
         <li>
           {/* <Theme className="cursor-pointer ml-[45px] h-[35px] w-[35px]" onClick={changeTheme}/> */}
           <div className="cursor-pointer w-[35px] h-[35px] bg-[#795DDD] transition-all transition-duration-[300ms] hover:bg-[#6B15EC] ml-[45px] rounded-full flex justify-center items-center" onClick={changeTheme}>
-            <i className="fa-solid fa-moon text-white ml-[2px] mt-[2px]"></i>
+            <i className="fa-solid fa-moon text-white ml-[2px] mt-[2px]" ref={themeBtn}></i>
           </div>
         </li>
         <li>
           {/* <User className="cursor-pointer ml-[45px] h-[35px] w-[35px]"/> */}
-          <i class="fa-solid fa-circle-user cursor-pointer ml-[45px] text-[35px] text-[#795DDD] hover:text-[#6B15EC] transition-duration-[300ms] transition-all"></i>
+          <Link to="/dashboard/login" className="fa-solid fa-circle-user cursor-pointer ml-[45px] text-[35px] text-[#795DDD] hover:text-[#6B15EC] transition-duration-[300ms] transition-all"></Link>
         </li>
         <li className="z-[-999] w-[30px] h-[30px] bg-white ml-[-33px] rounded-full"></li>
       </ul>
