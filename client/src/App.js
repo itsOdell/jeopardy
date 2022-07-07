@@ -60,6 +60,10 @@ function App() {
               {/*show login/register tab in sidenav if token not authorized, 
               conditional rendering in dashboardjs to see if token is valid.
               */}
+              <Route exact path="/dashboard/">
+
+              </Route>
+              
               <Route exact path="/dashboard/create">
                 <Play />
               </Route>

@@ -1,21 +1,14 @@
-import {useState, useRef} from "react"
+import {useState} from "react"
 import {Link} from 'react-router-dom'
-import {ReactComponent as User} from "../img/User.svg"
 import {ReactComponent as Logo} from "../img/Logo-black.svg";
-import {ReactComponent as Theme} from "../img/Theme.svg"
-import {domain} from "../App"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faSun, faMoon} from '@fortawesome/free-solid-svg-icons'
 
 function Navbar() {
-  let themeBtn = useRef();
-
+  let [theme, setTheme] = useState(document.body.classList.contains("dark") ? true : false)
   function changeTheme() {
     document.body.classList.toggle("dark");
-    if (document.body.classList.contains("dark")) {
-      themeBtn.current.classList.add("fa-sun");
-      themeBtn.current.classList.remove("ml-[2px]", "mt-[2px]");
-    } else {
-      themeBtn.current.classList.remove("fa-sun")
-    }
+    setTheme(!theme);
   }
 
 
@@ -38,7 +31,7 @@ function Navbar() {
         <li>
           {/* <Theme className="cursor-pointer ml-[45px] h-[35px] w-[35px]" onClick={changeTheme}/> */}
           <div className="cursor-pointer w-[35px] h-[35px] bg-[#795DDD] transition-all transition-duration-[300ms] hover:bg-[#6B15EC] ml-[45px] rounded-full flex justify-center items-center" onClick={changeTheme}>
-            <i className="fa-solid fa-moon text-white ml-[2px] mt-[2px]" ref={themeBtn}></i>
+            <FontAwesomeIcon className="text-white text-[20px]" icon={theme ? faMoon : faSun}/>
           </div>
         </li>
         <li>
