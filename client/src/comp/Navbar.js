@@ -1,8 +1,9 @@
-import {useState, useRef} from "react"
+import {useState, useRef, useEffect} from "react"
 import {Link} from 'react-router-dom'
 import {ReactComponent as Logo} from "../img/Logo-black.svg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faSun, faMoon, faBars, faX} from '@fortawesome/free-solid-svg-icons'
+import SideNavContent from "./SideNavContent";
 
 function Navbar() {
   let [theme, setTheme] = useState(document.body.classList.contains("dark") ? true : false)
@@ -10,9 +11,21 @@ function Navbar() {
   let [input, setInput] = useState("")
   let menu = useRef()
 
+  useEffect(() => {
+    if (document.body.classList.contains("dark")) {
+      setTheme(false)
+    } else {
+      setTheme(true)
+    }
+  }, [theme])
+
   function changeTheme() {
     document.body.classList.toggle("dark");
-    setTheme(!theme);
+    if (document.body.classList.contains("dark")) {
+      setTheme(false)
+    } else {
+      setTheme(true)
+    }
     theme ? menu.current.style.color = "white" : menu.current.style.color = "#141414";
   }
 
@@ -66,8 +79,8 @@ function Navbar() {
       </ul>
     </nav>
 
-    <section id="sideNav" className={`transition-all transition-duration-[300ms] absolute h-[100vh] right-0 top-0 w-0 xl:w-[0] bg-[#6B15EC]`}>
-
+    <section id="sideNav" className={`transition-all transition-duration-[300ms] absolute h-[100vh] right-0 top-0 w-0 xl:w-[0] bg-[#6B15EC] indent-7`}>
+      <SideNavContent closed={closed ? "hidden" : "block"}/>
     </section>
     </>
   )
