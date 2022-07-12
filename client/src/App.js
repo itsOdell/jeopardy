@@ -61,7 +61,6 @@ function App() {
               conditional rendering in dashboardjs to see if token is valid.
               */}
               <Route exact path="/dashboard/">
-
               </Route>
               
               <Route exact path="/dashboard/create">

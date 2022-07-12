@@ -4,7 +4,7 @@ import {ReactComponent as Blob} from "../img/Blob.svg";
 
 function Main() {
   return (
-    <main className="w-[80%] mt-[5px] flex justify-center items-center m-auto xl:justify-between">
+    <main className="w-[80%] mt-[5px] flex justify-center items-center m-auto xl:justify-between select-none">
       <div className="w-[550px] mt-[60px]">
         <h1 className="dark:text-[#FFFFFF] text-[50px] font-bold tracking-[3%] leading-[1.3] mb-[50px]">Play, edit and make
         jeopardies easily</h1>
